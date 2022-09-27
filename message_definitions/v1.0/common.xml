@@ -6371,7 +6371,7 @@
       <extensions/>
       <field type="float" name="ignition_voltage" units="V">Supply voltage to EFI sparking system.  Zero in this value means "unknown", so if the supply voltage really is zero volts use 0.0001 instead.</field>
     </message>
-	<!-- PTP CUSTOM MESSAGES-->
+    <!-- PTP CUSTOM MESSAGES-->
     <message id="208" name="PTP_TIMESYNC">
       <description> Timesync on mavlink </description>
       <field type="uint8_t" name="msg_type">PTP msg type</field>
