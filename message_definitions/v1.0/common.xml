@@ -6371,6 +6371,50 @@
       <extensions/>
       <field type="float" name="ignition_voltage" units="V">Supply voltage to EFI sparking system.  Zero in this value means "unknown", so if the supply voltage really is zero volts use 0.0001 instead.</field>
     </message>
+	<!-- PTP CUSTOM MESSAGES-->
+    <message id="208" name="PTP_TIMESYNC">
+      <description> Timesync on mavlink </description>
+      <field type="uint8_t" name="msg_type">PTP msg type</field>
+      <field type="uint8_t" name="target_system">System ID (0 for broadcast)</field>
+      <field type="uint32_t" name="time_sec">Timestamp sec</field>
+      <field type="uint32_t" name="time_nsec">Timestamp nsec</field>
+    </message>
+    <!-- KCMVP CUSTOM MESSAGES-->
+    <message id="202" name="KCMVP_SET_ENCRYPT">
+      <description>KCMVP SET PARAMETER MESSAGE</description>
+      <field type="uint8_t" name="algorithm_type">Algorithm Type.</field>
+      <field type="uint8_t" name="key_index">Key Index.</field>
+    </message>
+    <message id="203" name="KCMVP_ENCRYPT_MODE_ON_OFF">
+      <description>KCMVP ENCRYPT MODE ON OFF MESSAGE</description>
+      <field type="uint8_t" name="kcmvp_encrypt_mode_on">encrypt mode on</field>
+      <field type="uint8_t" name="kcmvp_encrypt_mode_off">encrypt mode off</field>
+    </message>
+    <message id="204" name="KCMVP_ENCRYPTED_MISSION_ITEM">
+      <description>KCMVP ENCRYPTED MISSION DATA MESSAGE</description>
+      <field type="uint8_t" name="sysid">MISSION_ITEM_INT MESSAGE COMPID</field>
+      <field type="uint8_t" name="compid">MISSION_ITEM_INT MESSAGE SYSID</field>
+      <field type="uint8_t[40]" name="encrypted_mission">encrypted mission data</field>
+      <field type="uint8_t[16]" name="counter_array">encrypt counter array</field>
+    </message>
+    <message id="205" name="KCMVP_ENCRYPTED_GLOBAL_POSITION">
+      <description>KCMVP ENCRYPTED GLOBAL POSITION MESSAGE</description>
+      <field type="uint8_t" name="sysid">GLOBAL_POSITION_INT MESSAGE COMPID</field>
+      <field type="uint8_t" name="compid">GLOBAL_POSITION_INT MESSAGE SYSID</field>
+      <field type="uint8_t[28]" name="encrypted_position">encrypted position data</field>
+      <field type="uint8_t[16]" name="counter_array">encrypt counter array</field>
+    </message>
+    <message id="206" name="KCMVP_ENCRYPTED_GPS_RAW">
+      <description>KCMVP ENCRYPTED GPS RAW MESSAGE</description>
+      <field type="uint8_t" name="sysid">GPS_RAW_INT MESSAGE COMPID</field>
+      <field type="uint8_t" name="compid">GPS_RAW_INT MESSAGE SYSID</field>
+      <field type="uint8_t[52]" name="encrypted_position">encrypted position data</field>
+      <field type="uint8_t[16]" name="counter_array">encrypt counter array</field>
+    </message>
+    <message id="207" name="KCMVP_CMD_ACK">
+      <description>KCMVP COMMAND ACK MESSAGE</description>
+      <field type="uint8_t" name="ack_result">ACK RESULT</field>
+    </message>
     <!-- MESSAGE IDs 180 - 229: Space for custom messages in individual projectname_messages.xml files -->
     <message id="230" name="ESTIMATOR_STATUS">
       <description>Estimator status message including flags, innovation test ratios and estimated accuracies. The flags message is an integer bitmask containing information on which EKF outputs are valid. See the ESTIMATOR_STATUS_FLAGS enum definition for further information. The innovation test ratios show the magnitude of the sensor innovation divided by the innovation check threshold. Under normal operation the innovation test ratios should be below 0.5 with occasional values up to 1.0. Values greater than 1.0 should be rare under normal operation and indicate that a measurement has been rejected by the filter. The user should be notified if an innovation test ratio greater than 1.0 is recorded. Notifications for values in the range between 0.5 and 1.0 should be optional and controllable by the user.</description>
