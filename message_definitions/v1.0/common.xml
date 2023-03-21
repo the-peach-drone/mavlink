@@ -58,29 +58,29 @@
         <description>Use HMAC Key.</description>
       </entry>
     </enum>
-    <enum name="KCMVP_KEY_INDEX0">
-      <entry value="0" name="KCMVP_KEY_INDEX0">
+    <enum name="KCMVP_KEYINDEX">
+      <entry value="0" name="KCMVP_KEYINDEX0">
         <description>Use Key index 0.</description>
       </entry>
-      <entry value="1" name="KCMVP_KEY_INDEX1">
+      <entry value="1" name="KCMVP_KEYINDEX1">
         <description>Use Key index 1.</description>
       </entry>
-      <entry value="2" name="KCMVP_KEY_INDEX2">
+      <entry value="2" name="KCMVP_KEYINDEX2">
         <description>Use Key index 2.</description>
       </entry>
-      <entry value="3" name="KCMVP_KEY_INDEX3">
+      <entry value="3" name="KCMVP_KEYINDEX3">
         <description>Use Key index 3.</description>
       </entry>
-      <entry value="4" name="KCMVP_KEY_INDEX4">
+      <entry value="4" name="KCMVP_KEYINDEX4">
         <description>Use Key index 4.</description>
       </entry>
-      <entry value="5" name="KCMVP_KEY_INDEX5">
+      <entry value="5" name="KCMVP_KEYINDEX5">
         <description>Use Key index 5.</description>
       </entry>
-      <entry value="6" name="KCMVP_KEY_INDEX6">
+      <entry value="6" name="KCMVP_KEYINDEX6">
         <description>Use Key index 6.</description>
       </entry>
-      <entry value="7" name="KCMVP_KEY_INDEX7">
+      <entry value="7" name="KCMVP_KEYINDEX7">
         <description>Use Key index 7.</description>
       </entry>
     </enum>
@@ -5171,10 +5171,10 @@
       <field type="float" name="pitchspeed" units="rad/s">Pitch angular speed</field>
       <field type="float" name="yawspeed" units="rad/s">Yaw angular speed</field>
       <extensions/>
-        <field type="uint8_t" name="kcmvp_alg" units="KCMVP_ALG" invalid="0">KCMVP algorithm.</field>
-        <field type="uint8_t" name="kcmvp_mode" units="KCMVP_MODE" invalid="0">KCMVP Mode.</field>
-        <field type="uint8_t" name="kcmvp_key" units="KCMVP_KEY" invalid="0">KCMVP Key.</field>
-        <field type="uint8_t" name="kcmvp_key_index" units="KCMVP_KEY_INDEX" invalid="0">KCMVP Key index.</field>
+        <field type="uint8_t" name="kcmvp_alg" enum="KCMVP_ALG" invalid="0">KCMVP algorithm.</field>
+        <field type="uint8_t" name="kcmvp_mode" enum="KCMVP_MODE" invalid="0">KCMVP Mode.</field>
+        <field type="uint8_t" name="kcmvp_key" enum="KCMVP_KEY" invalid="0">KCMVP Key.</field>
+        <field type="uint8_t" name="kcmvp_key_index" enum="KCMVP_KEYINDEX" invalid="0">KCMVP Key index.</field>
         <field type="uint8_t[2]" name="ctr" invalid="0">ctr used by ctr mode.</field>
         <field type="uint8_t[2]" name="iv" invalid="0">initial vector used by cbc mode.</field>
     </message>
