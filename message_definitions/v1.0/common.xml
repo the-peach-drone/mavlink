@@ -4,6 +4,86 @@
   <version>3</version>
   <dialect>0</dialect>
   <enums>
+    <enum name="KCMVP_ALG">
+      <entry value="0" name="KCMVP_NOT_USE">
+        <description>disable KCMVP.</description>
+      </entry>
+      <entry value="1" name="KCMVP_ALG_AES">
+        <description>Use AES Algorithm.</description>
+      </entry>
+      <entry value="2" name="KCMVP_ALG_ARIA">
+        <description>USE ARIA Algorithm.</description>
+      </entry>
+      <entry value="3" name="KCMVP_ALG_SHA">
+        <description>USE SHA Algorithm.</description>
+      </entry>
+    </enum>
+    <enum name="KCMVP_MODE">
+      <entry value="0" name="KCMVP_MODE_UNKNOWN">
+        <description>Unknown mode.</description>
+      </entry>
+      <entry value="1" name="KCMVP_MODE_CBC">
+        <description>Use CBC mode.</description>
+      </entry>
+      <entry value="2" name="KCMVP_MODE_CTR">
+        <description>Use CTR mode.</description>
+      </entry>
+      <entry value="3" name="KCMVP_MODE_GCM">
+        <description>Use GCM mode.</description>
+      </entry>
+    </enum>
+    <enum name="KCMVP_KEY_TYPE">
+      <entry value="0" name="KCMVP_KEY_UNKNOWN">
+        <description>Unknown key.</description>
+      </entry>
+      <entry value="1" name="KCMVP_KEY_AES128">
+        <description>Use Aes 128 Key.</description>
+      </entry>
+      <entry value="2" name="KCMVP_KEY_AES192">
+        <description>Use Aes 192 Key.</description>
+      </entry>
+      <entry value="3" name="KCMVP_KEY_AES256">
+        <description>Use Aes 256 Key.</description>
+      </entry>
+      <entry value="4" name="KCMVP_KEY_ARIA128">
+        <description>Use Aria 128 Key.</description>
+      </entry>
+      <entry value="5" name="KCMVP_KEY_ARIA192">
+        <description>Use Aria 192 Key.</description>
+      </entry>
+      <entry value="6" name="KCMVP_KEY_ARIA256">
+        <description>Use Aria 256 Key.</description>
+      </entry>
+      <entry value="7" name="KCMVP_KEY_HMAC">
+        <description>Use HMAC Key.</description>
+      </entry>
+    </enum>
+    <enum name="KCMVP_KEY_INDEX0">
+      <entry value="0" name="KCMVP_KEY_INDEX0">
+        <description>Use Key index 0.</description>
+      </entry>
+      <entry value="1" name="KCMVP_KEY_INDEX1">
+        <description>Use Key index 1.</description>
+      </entry>
+      <entry value="2" name="KCMVP_KEY_INDEX2">
+        <description>Use Key index 2.</description>
+      </entry>
+      <entry value="3" name="KCMVP_KEY_INDEX3">
+        <description>Use Key index 3.</description>
+      </entry>
+      <entry value="4" name="KCMVP_KEY_INDEX4">
+        <description>Use Key index 4.</description>
+      </entry>
+      <entry value="5" name="KCMVP_KEY_INDEX5">
+        <description>Use Key index 5.</description>
+      </entry>
+      <entry value="6" name="KCMVP_KEY_INDEX6">
+        <description>Use Key index 6.</description>
+      </entry>
+      <entry value="7" name="KCMVP_KEY_INDEX7">
+        <description>Use Key index 7.</description>
+      </entry>
+    </enum>
     <enum name="FIRMWARE_VERSION_TYPE">
       <description>These values define the type of firmware release.  These values indicate the first version or release of this type.  For example the first alpha release would be 64, the second would be 65.</description>
       <entry value="0" name="FIRMWARE_VERSION_TYPE_DEV">
@@ -5090,6 +5170,13 @@
       <field type="float" name="rollspeed" units="rad/s">Roll angular speed</field>
       <field type="float" name="pitchspeed" units="rad/s">Pitch angular speed</field>
       <field type="float" name="yawspeed" units="rad/s">Yaw angular speed</field>
+      <extensions/>
+        <field type="uint8_t" name="kcmvp_alg" units="KCMVP_ALG" invalid="0">KCMVP algorithm.</field>
+        <field type="uint8_t" name="kcmvp_mode" units="KCMVP_MODE" invalid="0">KCMVP Mode.</field>
+        <field type="uint8_t" name="kcmvp_key" units="KCMVP_KEY" invalid="0">KCMVP Key.</field>
+        <field type="uint8_t" name="kcmvp_key_index" units="KCMVP_KEY_INDEX" invalid="0">KCMVP Key index.</field>
+        <field type="uint8_t[2]" name="ctr" invalid="0">ctr used by ctr mode.</field>
+        <field type="uint8_t[2]" name="iv" invalid="0">initial vector used by cbc mode.</field>
     </message>
     <message id="31" name="ATTITUDE_QUATERNION">
       <description>The attitude in the aeronautical frame (right-handed, Z-down, X-front, Y-right), expressed as quaternion. Quaternion order is w, x, y, z and a zero rotation would be expressed as (1 0 0 0).</description>
