@@ -5171,12 +5171,12 @@
       <field type="float" name="pitchspeed" units="rad/s">Pitch angular speed</field>
       <field type="float" name="yawspeed" units="rad/s">Yaw angular speed</field>
       <extensions/>
-        <field type="uint8_t" name="kcmvp_alg" enum="KCMVP_ALG" invalid="0">KCMVP algorithm.</field>
-        <field type="uint8_t" name="kcmvp_mode" enum="KCMVP_MODE" invalid="0">KCMVP Mode.</field>
-        <field type="uint8_t" name="kcmvp_key" enum="KCMVP_KEY" invalid="0">KCMVP Key.</field>
-        <field type="uint8_t" name="kcmvp_key_index" enum="KCMVP_KEYINDEX" invalid="0">KCMVP Key index.</field>
-        <field type="uint8_t[2]" name="ctr" invalid="0">ctr used by ctr mode.</field>
-        <field type="uint8_t[2]" name="iv" invalid="0">initial vector used by cbc mode.</field>
+      <field type="uint8_t" name="kcmvp_alg" enum="KCMVP_ALG" invalid="0">KCMVP algorithm.</field>
+      <field type="uint8_t" name="kcmvp_mode" enum="KCMVP_MODE" invalid="0">KCMVP Mode.</field>
+      <field type="uint8_t" name="kcmvp_key" enum="KCMVP_KEY" invalid="0">KCMVP Key.</field>
+      <field type="uint8_t" name="kcmvp_key_index" enum="KCMVP_KEYINDEX" invalid="0">KCMVP Key index.</field>
+      <field type="uint8_t[2]" name="ctr" invalid="0">ctr used by ctr mode.</field>
+      <field type="uint8_t[2]" name="iv" invalid="0">initial vector used by cbc mode.</field>
     </message>
     <message id="31" name="ATTITUDE_QUATERNION">
       <description>The attitude in the aeronautical frame (right-handed, Z-down, X-front, Y-right), expressed as quaternion. Quaternion order is w, x, y, z and a zero rotation would be expressed as (1 0 0 0).</description>
