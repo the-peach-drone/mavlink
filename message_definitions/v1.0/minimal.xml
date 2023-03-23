@@ -145,7 +145,7 @@
       <entry value="24" name="MAV_TYPE_VTOL_TILTWING">
         <description>Tiltwing VTOL. Fuselage stays horizontal in all flight phases. The whole wing, along with any attached engine, can tilt between vertical and horizontal mode.</description>
       </entry>
-	  <!-- Entries 25 reserved for other VTOL airframe -->
+      <!-- Entries 25 reserved for other VTOL airframe -->
       <entry value="25" name="MAV_TYPE_VTOL_RESERVED5">
         <description>VTOL reserved 5</description>
       </entry>
