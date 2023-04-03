@@ -32,58 +32,6 @@
         <description>Use GCM mode.</description>
       </entry>
     </enum>
-    <enum name="KCMVP_KEY_TYPE">
-      <entry value="0" name="KCMVP_KEY_UNKNOWN">
-        <description>Unknown key.</description>
-      </entry>
-      <entry value="1" name="KCMVP_KEY_AES128">
-        <description>Use Aes 128 Key.</description>
-      </entry>
-      <entry value="2" name="KCMVP_KEY_AES192">
-        <description>Use Aes 192 Key.</description>
-      </entry>
-      <entry value="3" name="KCMVP_KEY_AES256">
-        <description>Use Aes 256 Key.</description>
-      </entry>
-      <entry value="4" name="KCMVP_KEY_ARIA128">
-        <description>Use Aria 128 Key.</description>
-      </entry>
-      <entry value="5" name="KCMVP_KEY_ARIA192">
-        <description>Use Aria 192 Key.</description>
-      </entry>
-      <entry value="6" name="KCMVP_KEY_ARIA256">
-        <description>Use Aria 256 Key.</description>
-      </entry>
-      <entry value="7" name="KCMVP_KEY_HMAC">
-        <description>Use HMAC Key.</description>
-      </entry>
-    </enum>
-    <enum name="KCMVP_KEYINDEX">
-      <entry value="0" name="KCMVP_KEYINDEX0">
-        <description>Use Key index 0.</description>
-      </entry>
-      <entry value="1" name="KCMVP_KEYINDEX1">
-        <description>Use Key index 1.</description>
-      </entry>
-      <entry value="2" name="KCMVP_KEYINDEX2">
-        <description>Use Key index 2.</description>
-      </entry>
-      <entry value="3" name="KCMVP_KEYINDEX3">
-        <description>Use Key index 3.</description>
-      </entry>
-      <entry value="4" name="KCMVP_KEYINDEX4">
-        <description>Use Key index 4.</description>
-      </entry>
-      <entry value="5" name="KCMVP_KEYINDEX5">
-        <description>Use Key index 5.</description>
-      </entry>
-      <entry value="6" name="KCMVP_KEYINDEX6">
-        <description>Use Key index 6.</description>
-      </entry>
-      <entry value="7" name="KCMVP_KEYINDEX7">
-        <description>Use Key index 7.</description>
-      </entry>
-    </enum>
     <enum name="FIRMWARE_VERSION_TYPE">
       <description>These values define the type of firmware release.  These values indicate the first version or release of this type.  For example the first alpha release would be 64, the second would be 65.</description>
       <entry value="0" name="FIRMWARE_VERSION_TYPE_DEV">
@@ -5053,10 +5001,9 @@
       <extensions/>
       <field type="uint8_t" name="kcmvp_alg" enum="KCMVP_ALG" invalid="0">KCMVP algorithm.</field>
       <field type="uint8_t" name="kcmvp_mode" enum="KCMVP_MODE" invalid="0">KCMVP Mode.</field>
-      <field type="uint8_t" name="kcmvp_key" enum="KCMVP_KEY" invalid="0">KCMVP Key.</field>
-      <field type="uint8_t" name="kcmvp_key_index" enum="KCMVP_KEYINDEX" invalid="0">KCMVP Key index.</field>
-      <field type="uint8_t[2]" name="ctr" invalid="0">ctr used by ctr mode.</field>
-      <field type="uint8_t[2]" name="iv" invalid="0">initial vector used by cbc mode.</field>
+      <field type="uint8_t" name="kcmvp_key" invalid="0">KCMVP Key.</field>
+      <field type="uint8_t" name="kcmvp_key_index" invalid="0">KCMVP Key index.</field>
+      <field type="uint8_t[16]" name="kcmvp_iv" invalid="0">Initializer Vector</field>
     </message>
     <!-- IDs 15-17 reserved for PARAM_VALUE_UNION and other param messages -->
     <!-- IDs 19 reserved for PARAM_ACK_TRANSACTION (development.xml) -->
@@ -5180,10 +5127,9 @@
       <extensions/>
       <field type="uint8_t" name="kcmvp_alg" enum="KCMVP_ALG" invalid="0">KCMVP algorithm.</field>
       <field type="uint8_t" name="kcmvp_mode" enum="KCMVP_MODE" invalid="0">KCMVP Mode.</field>
-      <field type="uint8_t" name="kcmvp_key" enum="KCMVP_KEY" invalid="0">KCMVP Key.</field>
-      <field type="uint8_t" name="kcmvp_key_index" enum="KCMVP_KEYINDEX" invalid="0">KCMVP Key index.</field>
-      <field type="uint8_t[2]" name="ctr" invalid="0">ctr used by ctr mode.</field>
-      <field type="uint8_t[2]" name="iv" invalid="0">initial vector used by cbc mode.</field>
+      <field type="uint8_t" name="kcmvp_key" invalid="0">KCMVP Key.</field>
+      <field type="uint8_t" name="kcmvp_key_index" invalid="0">KCMVP Key index.</field>
+      <field type="uint8_t[16]" name="kcmvp_iv" invalid="0">Initializer Vector</field>
     </message>
     <message id="31" name="ATTITUDE_QUATERNION">
       <description>The attitude in the aeronautical frame (right-handed, Z-down, X-front, Y-right), expressed as quaternion. Quaternion order is w, x, y, z and a zero rotation would be expressed as (1 0 0 0).</description>
