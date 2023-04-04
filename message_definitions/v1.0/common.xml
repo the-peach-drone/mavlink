@@ -5850,6 +5850,11 @@
       <field type="uint16_t" name="fields_updated" enum="HIGHRES_IMU_UPDATED_FLAGS" display="bitmask">Bitmap for fields that have updated since last message</field>
       <extensions/>
       <field type="uint8_t" name="id" instance="true">Id. Ids are numbered from 0 and map to IMUs numbered from 1 (e.g. IMU1 will have a message with id=0)</field>
+      <field type="uint8_t" name="kcmvp_alg" enum="KCMVP_ALG" invalid="0">KCMVP algorithm.</field>
+      <field type="uint8_t" name="kcmvp_mode" enum="KCMVP_MODE" invalid="0">KCMVP Mode.</field>
+      <field type="uint8_t" name="kcmvp_key" invalid="0">KCMVP Key.</field>
+      <field type="uint8_t" name="kcmvp_key_index" invalid="0">KCMVP Key index.</field>
+      <field type="uint8_t[16]" name="kcmvp_iv" invalid="0">Initializer Vector</field>
     </message>
     <message id="106" name="OPTICAL_FLOW_RAD">
       <description>Optical flow from an angular rate flow sensor (e.g. PX4FLOW or mouse sensor)</description>
