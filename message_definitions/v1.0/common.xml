@@ -5143,6 +5143,11 @@
       <field type="float" name="yawspeed" units="rad/s">Yaw angular speed</field>
       <extensions/>
       <field type="float[4]" name="repr_offset_q" invalid="[0]">Rotation offset by which the attitude quaternion and angular speed vector should be rotated for user display (quaternion with [w, x, y, z] order, zero-rotation is [1, 0, 0, 0], send [0, 0, 0, 0] if field not supported). This field is intended for systems in which the reference attitude may change during flight. For example, tailsitters VTOLs rotate their reference attitude by 90 degrees between hover mode and fixed wing mode, thus repr_offset_q is equal to [1, 0, 0, 0] in hover mode and equal to [0.7071, 0, 0.7071, 0] in fixed wing mode.</field>
+      <field type="uint8_t" name="kcmvp_alg" enum="KCMVP_ALG" invalid="0">KCMVP algorithm.</field>
+      <field type="uint8_t" name="kcmvp_mode" enum="KCMVP_MODE" invalid="0">KCMVP Mode.</field>
+      <field type="uint8_t" name="kcmvp_key" invalid="0">KCMVP Key.</field>
+      <field type="uint8_t" name="kcmvp_key_index" invalid="0">KCMVP Key index.</field>
+      <field type="uint8_t[16]" name="kcmvp_iv" invalid="0">Initializer Vector</field>
     </message>
     <message id="32" name="LOCAL_POSITION_NED">
       <description>The filtered local position (e.g. fused computer vision and accelerometers). Coordinate frame is right-handed, Z-axis down (aeronautical frame, NED / north-east-down convention)</description>
