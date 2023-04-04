@@ -5153,6 +5153,12 @@
       <field type="float" name="vx" units="m/s">X Speed</field>
       <field type="float" name="vy" units="m/s">Y Speed</field>
       <field type="float" name="vz" units="m/s">Z Speed</field>
+      <extensions/>
+      <field type="uint8_t" name="kcmvp_alg" enum="KCMVP_ALG" invalid="0">KCMVP algorithm.</field>
+      <field type="uint8_t" name="kcmvp_mode" enum="KCMVP_MODE" invalid="0">KCMVP Mode.</field>
+      <field type="uint8_t" name="kcmvp_key" invalid="0">KCMVP Key.</field>
+      <field type="uint8_t" name="kcmvp_key_index" invalid="0">KCMVP Key index.</field>
+      <field type="uint8_t[16]" name="kcmvp_iv" invalid="0">Initializer Vector</field>
     </message>
     <message id="33" name="GLOBAL_POSITION_INT">
       <description>The filtered global position (e.g. fused GPS and accelerometers). The position is in GPS-frame (right-handed, Z-up). It
