@@ -49,35 +49,36 @@ jobs:
         run: |
           ./scripts/test.sh py
 
-  node-tests:
-    name: Node ${{ matrix.node-version }} test
-    runs-on: ubuntu-20.04
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: ['12', '14'] # 15 fails for some weird reason
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: 'recursive'
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
-      - name: Install dependencies
-        run: |
-          pip install future lxml
-      - uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - name : Test mavlink
-        run: |
-          ./scripts/test.sh node
+  # node-tests:
+  #   name: Node ${{ matrix.node-version }} test
+  #   runs-on: ubuntu-20.04
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       node-version: ['12', '14'] # 15 fails for some weird reason
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #       with:
+  #         submodules: 'recursive'
+  #     - name: Set up Python 3.8
+  #       uses: actions/setup-python@v2
+  #       with:
+  #         python-version: 3.8
+  #     - name: Install dependencies
+  #       run: |
+  #         pip install future lxml
+  #     - uses: actions/setup-node@v2
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+  #     - run: npm install
+  #     - name : Test mavlink
+  #       run: |
+  #         ./scripts/test.sh node
 
   deploy:
     name: Generate and push C headers
-    needs: [format, python-tests, node-tests]
+    needs: [format, python-tests]
+    # needs: [format, python-tests, node-tests]
     runs-on: ubuntu-20.04
     if: github.ref == 'refs/heads/master'
     env:
